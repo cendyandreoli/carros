@@ -1,12 +1,13 @@
 package com.app.carros.carro;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 import java.util.UUID;
 
+@Entity
 public class Carro {
+    @Id
     private UUID id;
     private String placa;
     private String modelo;
