@@ -1,4 +1,4 @@
-package com.app.carros.carro;
+package com.app.concessionaria.carros;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

@@ -1,4 +1,4 @@
-package com.app.carros.carro;
+package com.app.concessionaria.carros;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -74,5 +74,13 @@ public class Carro {
 
     public void setMotor(int motor) {
         this.motor = motor;
+    }
+
+    public void atualizaCarroExistente(Carro novoCarro){
+        this.placa = novoCarro.getPlaca();
+        this.modelo = novoCarro.getModelo();
+        this.marca = novoCarro.getMarca();
+        this.ano = novoCarro.getAno();
+        this.motor = novoCarro.getMotor();
     }
 }
