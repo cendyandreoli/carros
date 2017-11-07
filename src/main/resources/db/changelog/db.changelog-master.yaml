@@ -17,3 +17,21 @@ databaseChangeLog:
           encoding: utf8
           path: sqls/0002-migracao-concessionarias.sql
           relativeToChangelogFile: true
+  - changeSet:
+        id: 3
+        author: cendyAndreeoli
+        changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: sqls/0003-migracao-concessionarias-alter-table.sql
+            relativeToChangelogFile: true
+  - changeSet:
+          id: 4
+          author: cendyAndreeoli
+          changes:
+          - sqlFile:
+              dbms: postgresql
+              encoding: utf8
+              path: sqls/0004-migracao-concessionarias-alter-table.sql
+              relativeToChangelogFile: true

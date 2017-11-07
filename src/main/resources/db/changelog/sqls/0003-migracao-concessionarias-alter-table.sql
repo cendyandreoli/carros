@@ -1,0 +1,1 @@
+ALTER TABLE concessionaria DROP COLUMN carro_pertencente
