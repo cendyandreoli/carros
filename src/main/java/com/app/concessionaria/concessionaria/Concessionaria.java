@@ -1,12 +1,11 @@
 package com.app.concessionaria.concessionaria;
 
-import com.app.concessionaria.carros.Carro;
+import com.app.concessionaria.veiculos.Veiculo;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -18,7 +17,7 @@ public class Concessionaria {
     private Date ano;
 
     @OneToOne(mappedBy = "concessionaria")
-    private Carro carro;
+    private Veiculo veiculo;
 
     public Concessionaria(){};
 

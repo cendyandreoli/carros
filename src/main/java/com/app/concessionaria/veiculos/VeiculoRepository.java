@@ -1,4 +1,4 @@
-package com.app.concessionaria.carros;
+package com.app.concessionaria.veiculos;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -8,11 +8,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 @Repository
-public interface CarroRepository extends CrudRepository<Carro, UUID> {
-    @Query("SELECT c FROM Carro c")
-    Page<Carro> listaDeCarros(Pageable pageable);
+public interface VeiculoRepository extends CrudRepository<Veiculo, UUID> {
+    @Query("SELECT c FROM Veiculo c")
+    Page<Veiculo> listaDeCarros(Pageable pageable);
 
-    @Query("SELECT c FROM Carro c WHERE c.id = :id")
-    Carro getById(@Param("id") UUID id); //== ?1
+    @Query("SELECT c FROM Veiculo c WHERE c.id = :id")
+    Veiculo getById(@Param("id") UUID id); //== ?1
 
 }

@@ -1,4 +1,4 @@
-create table carro
+create table veiculo
 (
   id uuid not null,
   placa character varying(100) not null,
@@ -6,5 +6,6 @@ create table carro
   marca character varying(100) not null,
   motor INTEGER,
   ano DATE,
+  concessionaria_id UUID,
   constraint carro_pk primary key (id)
-);
+)

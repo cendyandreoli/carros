@@ -1,14 +1,13 @@
-package com.app.concessionaria.carros;
+package com.app.concessionaria.veiculos;
 
 import com.app.concessionaria.concessionaria.Concessionaria;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 
 @Entity
-public class Carro {
+public class Veiculo {
     @Id
     private UUID id;
     private String placa;
@@ -22,11 +21,11 @@ public class Carro {
 //    @JsonProperty(value = "nome do obj")
     private Concessionaria concessionaria;
 
-    public Carro(){
+    public Veiculo(){
 
     }
 
-    public Carro(UUID id, String placa, String modelo, String marca, Date ano, int motor, Concessionaria concessionaria) {
+    public Veiculo(UUID id, String placa, String modelo, String marca, Date ano, int motor, Concessionaria concessionaria) {
         this.id = id;
         this.placa = placa;
         this.modelo = modelo;
@@ -92,12 +91,12 @@ public class Carro {
         this.motor = motor;
     }
 
-    public void atualizaCarroExistente(Carro novoCarro){
-        this.placa = novoCarro.getPlaca();
-        this.modelo = novoCarro.getModelo();
-        this.marca = novoCarro.getMarca();
-        this.ano = novoCarro.getAno();
-        this.motor = novoCarro.getMotor();
-        this.concessionaria = novoCarro.getConcessionaria();
+    public void atualizaCarroExistente(Veiculo novoVeiculo){
+        this.placa = novoVeiculo.getPlaca();
+        this.modelo = novoVeiculo.getModelo();
+        this.marca = novoVeiculo.getMarca();
+        this.ano = novoVeiculo.getAno();
+        this.motor = novoVeiculo.getMotor();
+        this.concessionaria = novoVeiculo.getConcessionaria();
     }
 }
