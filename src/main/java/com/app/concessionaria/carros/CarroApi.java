@@ -1,5 +1,7 @@
 package com.app.concessionaria.carros;
 
+import com.app.concessionaria.concessionaria.Concessionaria;
+import com.app.concessionaria.concessionaria.ConcessionariaRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ import java.util.UUID;
 public class CarroApi{
     @Autowired
     private CarroRepository carroRepository;
+
+    @Autowired
+    private ConcessionariaRepository concessionariaRepository;
 
     @GetMapping()
     @ApiOperation(value="Buscar lista de carros")
@@ -41,6 +46,8 @@ public class CarroApi{
     @ApiOperation(value="Atualizar carro")
     public Carro atualiza(@RequestBody Carro carroAtualizado, @PathVariable("id") UUID id){
         Carro carro = carroRepository.findOne(id);
+        Concessionaria concessionaria = concessionariaRepository.findOne(carroAtualizado.getConcessionaria().getId());
+        carro.setConcessionaria(concessionaria);
         carro.atualizaCarroExistente(carroAtualizado);
         carroRepository.save(carro);
         return carro;

@@ -4,6 +4,7 @@ import com.app.concessionaria.carros.Carro;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -16,6 +17,8 @@ public class Concessionaria {
     private String endereco;
     private Date ano;
 
+    @OneToOne(mappedBy = "concessionaria")
+    private Carro carro;
 
     public Concessionaria(){};
 

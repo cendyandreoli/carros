@@ -1,0 +1,1 @@
+ALTER TABLE carro ADD COLUMN concessionaria_id UUID
