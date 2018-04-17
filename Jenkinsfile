@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'gradle build'
+        sh '''sudo apt-get install gradle
+gradle build'''
       }
     }
   }
