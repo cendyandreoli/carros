@@ -1,12 +1,14 @@
-package com.app.carros.carro;
+package com.app.concessionaria.veiculos;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import com.app.concessionaria.concessionaria.Concessionaria;
 
-import java.time.LocalDate;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
 
-public class Carro {
+@Entity
+public class Veiculo {
+    @Id
     private UUID id;
     private String placa;
     private String modelo;
@@ -14,17 +16,23 @@ public class Carro {
     private Date ano;
     private int motor;
 
-    public Carro(){
+    @OneToOne
+    @JoinColumn(name = "concessionaria_id")
+//    @JsonProperty(value = "nome do obj")
+    private Concessionaria concessionaria;
+
+    public Veiculo(){
 
     }
 
-    public Carro(UUID id, String placa, String modelo, String marca, Date ano, int motor) {
+    public Veiculo(UUID id, String placa, String modelo, String marca, Date ano, int motor, Concessionaria concessionaria) {
         this.id = id;
         this.placa = placa;
         this.modelo = modelo;
         this.marca = marca;
         this.ano = ano;
         this.motor = motor;
+        this.concessionaria = concessionaria;
     }
 
     public UUID getId() {
@@ -71,7 +79,24 @@ public class Carro {
         return motor;
     }
 
+    public Concessionaria getConcessionaria() {
+        return concessionaria;
+    }
+
+    public void setConcessionaria(Concessionaria concessionaria) {
+        this.concessionaria = concessionaria;
+    }
+
     public void setMotor(int motor) {
         this.motor = motor;
+    }
+
+    public void atualizaCarroExistente(Veiculo novoVeiculo){
+        this.placa = novoVeiculo.getPlaca();
+        this.modelo = novoVeiculo.getModelo();
+        this.marca = novoVeiculo.getMarca();
+        this.ano = novoVeiculo.getAno();
+        this.motor = novoVeiculo.getMotor();
+        this.concessionaria = novoVeiculo.getConcessionaria();
     }
 }

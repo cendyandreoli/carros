@@ -1,1 +1,9 @@
 language: java
+before_install:
+- chmod +x gradlew
+deploy:
+  api-key:
+    secure: D92scav2046OcefkQOokkiqQUhwq6aRipWWCSDzB/XHYLcvLrP5I+pZafNRUIoEn2b1oKAN5WHNQWFFqd90LJs4NAm85fZOMgliJ3/I2sewPHbGfw6Nh1o2f685Utw88twbwVRWmwfopdijTDC/y9a9BUKINySqe3ZaNWfNmBZ4qul9x0So3W0IDf8zONYjHIkbZgod9TIRrSmOuqj1Z5H1a9HPGk/2lU5P416dV73tMtWsDSXlbqdLtDaDEkX40y2WhGY8/M1YFQCZcXLC9XyogAOQ/xapIGGW76SWSVziC8kQqd2+JGxJ8iAWYJs/W2L8wMHmIkfbdAk9fcS8U1DizaNqgT/7HEsnL3/zZbqe5uF1XzEj6Sms7os1supYWfOnZWvtnmpeJYxcvtbZoc++UBCW9Y/OLf0lcER/P9vuWSgPuMpel4JUA6guzYTBtkqUY37QxfId/qhY4yWHZ4VsqkrSiDWH0l4hwoGvQ7nc8OD7ss5rQnaSC3pFNIcdwoqYCHYIlzy3f+N1NsIrM+fcowc1T+Q6j31YR7LQxe5MABuqITqHo7gIJCmo+z/DWypQIkLcA6z2Q56oCcpFJCbT99V00wpDahShkGo4PH4xrOQIV3pdfhknQMsQEJONJVosV9PcWGT+A0QggpxSMIRB6KhYkkeHPLbo8rd8u82Y=
+  provider: heroku
+  app:
+    staging: carros-app

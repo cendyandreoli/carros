@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: cendyAndreoli
+      changes:
+      - sqlFile:
+          dbms: postgresql
+          encoding: utf8
+          path: sqls/0001-migracao-inicial.sql
+          relativeToChangelogFile: true
+  - changeSet:
+        id: 2
+        author: cendyAndreoli
+        changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            path: sqls/0002-migracao-concessionaria.sql
+            relativeToChangelogFile: true
