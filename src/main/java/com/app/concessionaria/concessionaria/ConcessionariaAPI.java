@@ -11,7 +11,7 @@ import java.util.UUID;
 
 
 @RestController
-@RequestMapping("/concessionaria")
+@RequestMapping("/concessionarias")
 @Api(description = "API para acesso e manipulação das concessionarias")
 public class ConcessionariaAPI {
     @Autowired
